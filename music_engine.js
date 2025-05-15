@@ -8,9 +8,12 @@ function createMusicManager(voiceAssets){
   });
 
   function play(){
-    voices.forEach((voice) => {
-      voice.voicePlayer.start();
-    })
+    Tone.start().then(() => {
+      console.log("context started");
+      voices.forEach((voice) => {
+        voice.voicePlayer.start();
+      });
+    });
   }
 
   function update(){
