@@ -34,11 +34,11 @@ function createVoice(voiceAsset){
   //Setup Internal State
   let currentState = VOICE_STATES.IDLE;
   let stateTimer = 0;
-  let rampUpTime = 10;
+  let rampUpTime = 5;
   let rampDownTime = 15;
-  let activeTime = 10//45;
+  let activeTime = 20//45;
   let frameCountBuffer = 0;
-  let frameCountBreakThreshold = 5;
+  let frameCountBreakThreshold = 10;
 
   //Setup Voice
   let voiceGainVal = 0;
