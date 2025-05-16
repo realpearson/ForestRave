@@ -35,8 +35,8 @@ function createVoice(voiceAsset){
   let currentState = VOICE_STATES.IDLE;
   let stateTimer = 0;
   let rampUpTime = 10;
-  let rampDownTime = 20;
-  let activeTime = 5//45;
+  let rampDownTime = 15;
+  let activeTime = 10//45;
   let frameCountBuffer = 0;
   let frameCountBreakThreshold = 5;
 

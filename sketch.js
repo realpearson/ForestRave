@@ -1,6 +1,13 @@
 let cnv;
-const voiceAddresses = ['assets/notes-1.wav', 'assets/notes-2.wav', 'assets/notes-3.wav', 'assets/notes-4.wav'];
+const voiceAddresses = [
+  'assets/ForestRave Drums.wav', 
+  'assets/ForestRave Bass.wav', 
+  'assets/ForestRave Bubbly.wav', 
+  'assets/ForestRave Stabby.wav',
+  'assets/ForestRave_Ambience.wav'
+];
 const musicManager = createMusicManager(voiceAddresses);
+
 let verb = new Tone.Reverb(4.5).toDestination();
 
 window.addEventListener("click", musicManager.play, {once: true});
@@ -86,6 +93,8 @@ function draw(){
     console.log('d');
     musicManager.voices[3].triggerVoice();
   }
+
+  musicManager.voices[4].triggerVoice();
 
   musicManager.update();
 
