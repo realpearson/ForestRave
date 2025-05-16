@@ -20,6 +20,9 @@ var lastfern;
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
+  musicManager.voices[2].setGainMult(2);
+  musicManager.voices[3].setGainMult(2);
+
     background(230, 230, 255);
   noSmooth();
 

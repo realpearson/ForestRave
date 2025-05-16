@@ -42,6 +42,7 @@ function createVoice(voiceAsset){
 
   //Setup Voice
   let voiceGainVal = 0;
+  let gainMult = 1;
   const voiceGain = new Tone.Gain(voiceGainVal).toDestination();
   
   const voicePlayer = new Tone.Player(voiceAsset).connect(voiceGain);
@@ -71,7 +72,7 @@ function createVoice(voiceAsset){
           voiceGainVal = 1;
           currentState = VOICE_STATES.ACTIVE;
         }
-        voiceGain.set({gain: voiceGainVal});
+        voiceGain.set({gain: voiceGainVal*gainMult});
         break;
       case VOICE_STATES.RAMP_DOWN:
         //console.log(currentState);
@@ -80,7 +81,7 @@ function createVoice(voiceAsset){
           voiceGainVal = 0;
           currentState = VOICE_STATES.IDLE;
         }
-        voiceGain.set({gain: voiceGainVal});
+        voiceGain.set({gain: voiceGainVal*gainMult});
         break;
       case VOICE_STATES.ACTIVE:
         //console.log(currentState);
@@ -94,6 +95,7 @@ function createVoice(voiceAsset){
   }
 
   return {
+    setGainMult: function(mult){gainMult = mult},
     voiceGain,
     voicePlayer,
     update,
